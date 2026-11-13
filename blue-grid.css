@@ -1,0 +1,68 @@
+/* Blue-grid art direction. Existing motion and cursor rules stay in style.css. */
+
+body{position:relative;isolation:isolate;background:#06132b}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(120deg,rgba(3,12,32,.86),rgba(5,22,53,.64) 52%,rgba(3,10,29,.84)),url("assets/blue-grid-4k-v2.svg") center/cover no-repeat}
+
+:root:not([data-theme="dark"]) body::before{background-image:linear-gradient(120deg,rgba(235,245,255,.91),rgba(229,241,255,.83) 52%,rgba(239,247,255,.9)),url("assets/blue-grid-4k-v2.svg")}
+
+.hero-shell{background:transparent}
+
+.hero-subject-layout{padding-top:32px;padding-bottom:42px;column-gap:6%;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr)}
+
+.hero-subject-layout .hero-stage{height:auto;width:100%;max-width:544px;aspect-ratio:1122/1402;margin-inline:auto;isolation:isolate;align-self:center;-webkit-mask-image:none;mask-image:none;overflow:hidden;border-radius:clamp(20px,2.4vw,32px);border:1px solid #8cbfff38;background:#06152b;box-shadow:0 20px 48px -26px #000a}
+
+.hero-subject-layout .hero-stage::before{content:none}
+
+.hero-subject-layout .hero-base{filter:brightness(.92) saturate(.98);display:block;height:auto;width:100%;max-width:100%;margin-inline:auto;object-fit:contain;object-position:center;-webkit-mask-image:none;mask-image:none}
+
+.hero-subject-layout .hero-mobile-copy{position:relative;z-index:1}
+
+.work{background:rgba(4,17,38,.76)}
+
+.skills{background:linear-gradient(180deg,rgba(5,19,39,.92),rgba(7,24,43,.84))}
+
+.metrics{background:rgba(5,18,36,.65)}
+
+.contact{background:rgba(3,14,29,.91)}
+
+:root:not([data-theme="dark"]) .work{background:rgba(232,242,252,.72)}
+
+:root:not([data-theme="dark"]) .metrics{background:rgba(231,242,252,.64)}
+
+.showreel{padding:38px 0 100px;position:relative}
+
+.showreel-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+
+.showreel-heading h2{font-size:clamp(44px,4.8vw,68px);line-height:1.08;margin:0}
+
+.showreel-heading p{font:400 13px/1.65 'DM Sans',Arial,sans-serif;color:var(--muted);margin:12px 0 0}
+
+.showreel-duration{flex:none;border:1px solid var(--chip-border);border-radius:30px;padding:9px 15px;color:var(--accent);font:500 11px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.08em}
+
+.showreel-player{position:relative;isolation:isolate;border:1px solid #83c6ff7a;border-radius:22px;padding:7px;background:linear-gradient(145deg,#254d7680,#061224e8);box-shadow:0 25px 70px -35px #000b,inset 0 1px 0 #d4eeff30;overflow:hidden}
+
+.showreel-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#030b18;border-radius:15px;cursor:auto}
+
+.showreel-player video:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.showreel-fallback{position:absolute;inset:7px;display:grid;place-items:center;text-align:center;padding:24px;background:#06172beF;border-radius:15px;color:#edf7ff;font:500 16px/1.6 'DM Sans',Arial,sans-serif}
+
+.showreel-fallback[hidden]{display:none}
+
+@media(max-width:900px){.hero-subject-layout{column-gap:3%;padding-top:24px}.hero-subject-layout .hero-stage{height:auto}.showreel{padding-bottom:72px}}
+
+@media(max-width:650px){.hero-subject-layout{grid-template-columns:1fr;padding-top:18px;padding-bottom:36px}.hero-subject-layout .hero-stage{height:auto;width:100%;max-width:376px}.hero-subject-layout .hero-mobile-copy{margin-top:0}.showreel{padding-top:26px;padding-bottom:56px}.showreel-heading{gap:14px;margin-bottom:20px}.showreel-heading h2{font-size:42px}.showreel-heading p{font-size:11px;max-width:25ch}.showreel-duration{padding:7px 11px;font-size:10px}.showreel-player{padding:4px;border-radius:14px}.showreel-player video,.showreel-fallback{border-radius:10px}}
+
+@media print{body::before{display:none}body,.work,.metrics,.skills,.contact{background:white}.hero-subject-layout .hero-stage::before{display:none}.showreel-player{box-shadow:none}}
+
+
+
+/* Resume uses a normal link so visitors can view or save the original PDF. */
+
+.header nav .resume-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#165bb2,#173e82);border-color:#7dbbff80;color:#edf7ff;white-space:nowrap}
+
+.header nav .resume-button:hover{opacity:1;background:#123967}
+
+.resume-button svg{flex:none;width:16px;height:16px}
+

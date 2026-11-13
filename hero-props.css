@@ -1,0 +1,56 @@
+/* Floating creative tools, arranged around the portrait and live text. */
+
+.hero-props{position:absolute;inset:0;z-index:2;pointer-events:none;user-select:none}
+
+.hero-prop{position:absolute;display:block;width:var(--prop-size,78px);aspect-ratio:1;transform:rotate(var(--tilt,0deg));animation:hero-prop-arrive 1s var(--entry,.3s) cubic-bezier(.16,1,.3,1) both}
+
+.hero-prop-art{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 16px #00133365);animation:hero-prop-drift var(--float,8s) var(--phase,0s) ease-in-out infinite alternate}
+
+.hero-tool-art{border-radius:21%;background-image:url("https://vignesh-m-creative-portfolio.netlify.app/assets/creative-tool-icons-v1.png");background-size:600% 400%;box-shadow:0 5px 0 #020d22aa,0 18px 25px -12px #001433b0}
+
+.hero-prop-clapper{left:-2%;top:11%;--prop-size:clamp(96px,9.3vw,136px);--tilt:-13deg;--float:8.5s;--phase:-2s;--entry:.3s}
+
+.hero-prop-premiere{left:1%;bottom:19%;--prop-size:72px;--tilt:9deg;--float:7.5s;--phase:-4s;--entry:.5s}
+
+.hero-prop-premiere .hero-tool-art{background-position:5.46875% 9.895833%}
+
+.hero-prop-aftereffects{left:41%;top:14%;--prop-size:66px;--tilt:-8deg;--float:9s;--phase:-1s;--entry:.65s}
+
+.hero-prop-aftereffects .hero-tool-art{background-position:27.65625% 9.895833%}
+
+.hero-prop-ai{right:8%;top:2%;--prop-size:clamp(104px,9.4vw,138px);--tilt:12deg;--float:10s;--phase:-5s;--entry:.45s}
+
+.hero-prop-chatgpt{right:1%;bottom:8%;--prop-size:70px;--tilt:10deg;--float:8s;--phase:-3s;--entry:.8s}
+
+.hero-prop-chatgpt .hero-tool-art{background-position:94.53125% 9.895833%}
+
+.hero-prop-gemini{left:49%;bottom:7%;--prop-size:62px;--tilt:-10deg;--float:9.5s;--phase:-6s;--entry:.9s}
+
+.hero-prop-gemini .hero-tool-art{background-position:72.1875% 84.895833%}
+
+@keyframes hero-prop-arrive{from{opacity:0;translate:0 16px;scale:.88}to{opacity:1;translate:0 0;scale:1}}
+
+@keyframes hero-prop-drift{from{transform:translate3d(0,5px,0) rotate(-1.5deg)}to{transform:translate3d(3px,-7px,0) rotate(1.5deg)}}
+
+.hero-subject-layout .hero-contact-button,.vm-hero .vm-primary{background:linear-gradient(135deg,#1466cb,#174ba7 62%,#173b86);border:1px solid #6dc9ff8c;color:#f4fbff;box-shadow:inset 0 1px 0 #d6efff33,0 8px 24px -10px #0b63d48c;transition:background .3s,border-color .3s,box-shadow .3s,transform .3s}
+
+.hero-subject-layout .hero-contact-button:hover,.vm-hero .vm-primary:hover{background:linear-gradient(135deg,#0b397c,#092657);border-color:#8cddffb3;color:#fff;box-shadow:inset 0 1px 0 #d6efff26,0 9px 28px -12px #146fe3a6;transform:translateY(-2px)}
+
+.hero-subject-layout .hero-contact-button:focus-visible,.vm-hero .vm-primary:focus-visible{outline:2px solid #92e5ff;outline-offset:4px}
+
+:root[data-ambient-paused=true] .hero-prop,:root[data-ambient-paused=true] .hero-prop-art{animation-play-state:paused}
+
+.hero-props[data-animated=false] .hero-prop,.hero-props[data-animated=false] .hero-prop-art{animation:none}
+
+@media(max-width:1000px){.hero-prop-chatgpt,.hero-prop-gemini{display:none}.hero-prop-clapper{left:-3%;--prop-size:98px}.hero-prop-premiere{left:0;--prop-size:58px}.hero-prop-aftereffects{left:40%;top:10%;--prop-size:54px}.hero-prop-ai{right:1%;top:3%;--prop-size:96px}}
+
+@media(max-width:650px){.hero-props{top:18px;bottom:auto;height:clamp(330px,103vw,470px)}.hero-prop-clapper{left:-4%;top:13%;--prop-size:76px}.hero-prop-premiere{left:0;bottom:8%;--prop-size:50px}.hero-prop-aftereffects{left:auto;right:0;top:auto;bottom:12%;--prop-size:50px}.hero-prop-ai{right:-2%;top:2%;--prop-size:82px}}
+
+@container vm (max-width:1000px){.hero-prop-chatgpt,.hero-prop-gemini{display:none}.hero-prop-clapper{left:-3%;--prop-size:98px}.hero-prop-premiere{left:0;--prop-size:58px}.hero-prop-aftereffects{left:40%;top:10%;--prop-size:54px}.hero-prop-ai{right:1%;top:3%;--prop-size:96px}}
+
+@container vm (max-width:650px){.hero-props{top:18px;bottom:auto;height:clamp(330px,103cqw,470px)}.hero-prop-clapper{left:-4%;top:13%;--prop-size:76px}.hero-prop-premiere{left:0;bottom:8%;--prop-size:50px}.hero-prop-aftereffects{left:auto;right:0;top:auto;bottom:12%;--prop-size:50px}.hero-prop-ai{right:-2%;top:2%;--prop-size:82px}}
+
+@media(prefers-reduced-motion:reduce){.hero-prop,.hero-prop-art{animation:none}.hero-subject-layout .hero-contact-button,.vm-hero .vm-primary{transition:none}}
+
+@media print{.hero-props{display:none}}
+
